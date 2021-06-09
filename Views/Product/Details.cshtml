@@ -1,0 +1,24 @@
+﻿@model Product 
+
+<h1>@Model.Name</h1>
+<div class="thumbnail">
+    <img src="@Model.ImageUrl." alt="@Model.Name"/>
+    <div class="caption-full">
+        <h3 class="text-right">@Model.Price</h3>
+        <h3 class="text-right">@Model.Name</h3>
+        <p>@Model.Description</p>
+        <div>
+            <p class="accordion-button">
+                <a class="btn btn-primary"
+                   asp-controller="ShoppingCart"
+                   asp-action="AddToShoppingCart"
+                   asp-route-productId="@Model.ProductId">
+                    Add to Cart
+
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+</div>

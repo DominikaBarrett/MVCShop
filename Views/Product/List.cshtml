@@ -1,0 +1,46 @@
+﻿@model ProductListModel
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="card-deck mb-3 text-center">
+
+
+
+        @foreach (var element in Model.Products)
+        {
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+
+                    <h4 class="my-0 font-weight-normal">@element.Name</h4>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title pricing-card-title">
+                        @element.Price.ToString("c") <small class="text-muted"></small>
+                    </h3>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>@element.Description</li>
+                        <li> GB of storage</li>
+                        <li>Lorem ipsum dolor,</li>
+
+                    </ul>
+                   
+                    <button class="btn btn-lg btn-block btn-outline-primary"><a asp-controller="Product" asp-action="Details" asp-route-id="@element.ProductId">@element.Name</a></button>
+                </div>
+            </div>
+        }
+        
+    </div>
+</div>
+
+
+
+
+
+

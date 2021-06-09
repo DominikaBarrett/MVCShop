@@ -1,0 +1,36 @@
+﻿@model Product
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Price</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Description</td>
+            <td><img src="@(Model.Name).jpg" style="height: 20%; width: 50%; align-self: center; padding-top: 10px"> </td>
+            <td><strong>Price: @Model.Price.ToString("c")</strong></td>
+            <h3><a asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductId">@Model.Name</a></h3>
+            <div>
+                <p class="accordion-button">
+                    <a class="btn btn-primary"
+                       asp-controller ="ShoppingCart"
+                       asp-action="AddToShoppingCart"
+                       asp-route-productId="@Model.ProductId">Add to Cart
+                      
+                    </a>
+                </p>
+            </div>
+        </tr>
+    </tbody>
+
+
+</table>
